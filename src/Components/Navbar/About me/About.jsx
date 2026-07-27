@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaBookOpen } from "react-icons/fa";
+
 
 function About() {
   return (
@@ -28,9 +30,11 @@ function About() {
 
     {/* Education Card */}
     <div className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-2xl transition duration-300">
-      <h2 className="text-2xl font-bold text-blue-600 mb-4">
-      🎓  Education
-      </h2>
+
+<h2 className="text-2xl font-bold text-blue-600 mb-4 flex items-center gap-4">
+  <FaBookOpen className='font-bold text-blue-400' />
+  Education
+</h2>
 
       <p className="text-gray-600 leading-7">
          Sindh Madressatul Islam University <br />
