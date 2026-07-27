@@ -9,7 +9,7 @@ function Hero() {
   const imgRef = useRef(null);
   const titleRef = useRef(null);
 
-  const [image, setImage] = useState("/src/assets/normal1.jpeg");
+  const [image, setImage] = useState("/src/assets/nnnnnnnnnnnnn.jpeg");
 
   // Image Hover Animation
   const handleMouseEnter = () => {
@@ -18,7 +18,7 @@ function Hero() {
       scale: 0.9,
       duration: 0.3,
       onComplete: () => {
-        setImage("/src/assets/smile11.jpeg");
+        setImage("/src/assets/sssssssssssssss.jpeg");
 
         gsap.fromTo(
           imgRef.current,
@@ -45,7 +45,7 @@ function Hero() {
       scale: 0.9,
       duration: 0.3,
       onComplete: () => {
-        setImage("/src/assets/normal1.jpeg");
+        setImage("/src/assets/nnnnnnnnnnnnn.jpeg");
 
         gsap.fromTo(
           imgRef.current,
