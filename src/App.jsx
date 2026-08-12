@@ -13,10 +13,26 @@ function App() {
 
       <Navbar />
       <Hero/>
-      <About />
+
+
+      <section id="about">
+  <About />
+</section>
+
+   <section id="skills">
       <Skills/>
-      <Projects/>
-      <Form/>
+      </section>
+
+       <section id="projects"> 
+        <Projects/>
+       </section>
+     
+
+
+    <section id="contact">
+  <Form />
+</section>
+
       <Footer/>
     </div>
   )

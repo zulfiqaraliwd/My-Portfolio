@@ -15,24 +15,47 @@ function Navbar() {
 
           {/* Menu */}
           <ul className="flex items-center gap-10 text-gray-700 font-medium">
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              Home
-            </li>
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              About
-            </li>
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              Skills
-            </li>
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              Certificates
-            </li>
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              Projects
-            </li>
-            <li className="cursor-pointer hover:text-blue-600 transition duration-300">
-              Contact
-            </li>
+                <li>
+  <a
+    href="#home"
+    className="cursor-pointer hover:text-blue-600 transition duration-300"
+  >
+    Home
+  </a>
+</li>
+         <li>
+  <a
+    href="#about"
+    className="cursor-pointer hover:text-blue-600 transition duration-300"
+  >
+    About
+  </a>
+</li>
+                <li>
+  <a
+    href="#skills"
+    className="cursor-pointer hover:text-blue-600 transition duration-300"
+  >
+    Skills
+  </a>
+</li>
+         
+               <li>
+  <a
+    href="#projects"
+    className="cursor-pointer hover:text-blue-600 transition duration-300"
+  >
+    Projects
+  </a>
+</li>
+              <li>
+  <a
+    href="#contact"
+    className="cursor-pointer hover:text-blue-600 transition duration-300"
+  >
+    Contact
+  </a>
+</li>
           </ul>
         </div>
       </nav>

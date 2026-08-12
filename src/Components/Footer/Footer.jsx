@@ -81,7 +81,7 @@ function Footer() {
     href="#"
     className="text-gray-500 hover:text-gray-900 transition"
   >
-    <FaGithub size={30} />
+    <FaGithub size={22} />
   </a>
 
 </div>
