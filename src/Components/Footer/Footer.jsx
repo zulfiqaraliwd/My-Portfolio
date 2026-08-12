@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  FaLinkedinIn,
-  FaTwitter,
-  FaGithub,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -62,30 +58,33 @@ function Footer() {
 
 
           {/* Social Icons */}
-          <div className="flex gap-4">
+          <div className="flex gap-5">
 
-            <a
-              href="#"
-              className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-blue-600 hover:text-white transition"
-            >
-              <FaLinkedinIn size={18} />
-            </a>
+  {/* LinkedIn */}
+  <a
+    href="#"
+    className="text-gray-500 hover:text-blue-600 transition"
+  >
+    <FaLinkedin size={30} />
+  </a>
 
-            <a
-              href="#"
-              className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-sky-500 hover:text-white transition"
-            >
-              <FaTwitter size={18} />
-            </a>
+  {/* Twitter */}
+  <a
+    href="#"
+    className="text-gray-500 hover:text-sky-500 transition"
+  >
+    <FaTwitter size={30} />
+  </a>
 
-            <a
-              href="#"
-              className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition"
-            >
-              <FaGithub size={18} />
-            </a>
+  {/* GitHub */}
+  <a
+    href="#"
+    className="text-gray-500 hover:text-gray-900 transition"
+  >
+    <FaGithub size={30} />
+  </a>
 
-          </div>
+</div>
 
         </div>
 
