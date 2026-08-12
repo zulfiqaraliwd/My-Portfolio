@@ -1,18 +1,23 @@
 import React from 'react'
 import Navbar from './Components/Navbar/Navbar.jsx'
 import "./index.css"
-import Hero from './Components/Navbar/Hero/Hero.jsx'
-import About from './Components/Navbar/About me/About.jsx'
-import Skills from './Components/Navbar/Skills & Technologies/Skills.jsx'
-import Projects from './Components/Navbar/Projects/Projects.jsx'
+import Hero from './Components/Hero/Hero.jsx'
+import About from './Components/About me/About.jsx'
+import Skills from './Components/Skills & Technologies/Skills.jsx'
+import Projects from './Components/Projects/Projects.jsx'
+import Form from './Components/GetInTouch/Form.jsx'
+import Footer from './Components/Footer/Footer.jsx'
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100">
+
       <Navbar />
       <Hero/>
       <About />
       <Skills/>
       <Projects/>
+      <Form/>
+      <Footer/>
     </div>
   )
 }

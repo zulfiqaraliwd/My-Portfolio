@@ -1,9 +1,9 @@
 import React from "react";
 
-import ecommerce from "../../../assets/ecommerce.png"
-import qr from "../../../assets/QR code.png";
-import chat from "../../../assets/chatapp.png";
-import typing from "../../../assets/typing.webp";
+import ecommerce from "../../assets/ecommerce.png"
+import qr from "../../assets/QR code.png";
+import chat from "../../assets/chatapp.png";
+import typing from "../../assets/typing.webp";
 
 function Projects() {
   return (

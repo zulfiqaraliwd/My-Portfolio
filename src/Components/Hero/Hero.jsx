@@ -89,7 +89,6 @@ function Hero() {
       "MERN Stack Developer", 1500,
       "React.js Developer", 1500,
       "Next.js Developer", 1500,
-      "CEO and Founder of Solve 10x",2000
     ]}
     speed={60}
     repeat={Infinity}
