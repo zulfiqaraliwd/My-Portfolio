@@ -4,19 +4,21 @@ import { MdEmail } from "react-icons/md";
 import { gsap } from "gsap";
 import { TypeAnimation } from "react-type-animation";
 
+import firstImage from "../../assets/nnnnnnnnnnnnn.jpeg";
+import secondImage from "../../assets/sssssssssssssss.jpeg";
+
 function Hero() {
   const imgRef = useRef(null);
 
-  const [image, setImage] = useState("/src/assets/nnnnnnnnnnnnn.jpeg");
+  const [image, setImage] = useState(firstImage);
 
-  // Image Hover Animation
   const handleMouseEnter = () => {
     gsap.to(imgRef.current, {
       opacity: 0,
       scale: 0.9,
       duration: 0.3,
       onComplete: () => {
-        setImage("/src/assets/sssssssssssssss.jpeg");
+        setImage(secondImage);
 
         gsap.fromTo(
           imgRef.current,
@@ -43,7 +45,7 @@ function Hero() {
       scale: 0.9,
       duration: 0.3,
       onComplete: () => {
-        setImage("/src/assets/nnnnnnnnnnnnn.jpeg");
+        setImage(firstImage);
 
         gsap.fromTo(
           imgRef.current,
@@ -63,6 +65,8 @@ function Hero() {
       },
     });
   };
+
+
 
   return (
     <div>
