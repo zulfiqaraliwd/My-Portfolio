@@ -4,14 +4,14 @@ const createContact = async (req, res) => {
   try {
     console.log("1. BODY:", req.body);
 
-    const { name, email, mobile } = req.body;
+    const { name, email, message } = req.body;
 
     console.log("2. Creating contact...");
 
     const contact = await Contact.create({
       name,
       email,
-      mobile,
+      message,
     });
 
     console.log("3. Contact created:", contact);
@@ -20,6 +20,7 @@ const createContact = async (req, res) => {
       message: "Contact saved successfully",
       contact,
     });
+
   } catch (error) {
     console.log("CONTACT ERROR:", error);
 

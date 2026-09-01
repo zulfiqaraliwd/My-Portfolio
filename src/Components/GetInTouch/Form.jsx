@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Mail,
   Phone,
@@ -6,21 +6,66 @@ import {
 } from "lucide-react";
 
 function Form() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        console.log(data);
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      console.log("Error:", error);
+      alert("Server error");
+    }
+  };
+
   return (
     <div className="max-w-6xl mx-auto py-16 px-6 mt-30">
 
-      {/* Heading */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold">Get In Touch</h1>
-
         <div className="w-20 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
       </div>
 
-      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Contact Form */}
-        <form className="bg-white p-8 rounded-xl shadow-md w-full">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-8 rounded-xl shadow-md w-full"
+        >
 
           <h2 className="text-2xl font-bold text-center mb-6">
             Contact Form
@@ -34,8 +79,12 @@ function Form() {
 
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Enter your name"
               className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
@@ -47,8 +96,12 @@ function Form() {
 
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Enter your email"
               className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
@@ -60,12 +113,15 @@ function Form() {
 
             <textarea
               rows="4"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Write your message..."
               className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+              required
             ></textarea>
           </div>
 
-          {/* Button */}
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
@@ -74,7 +130,6 @@ function Form() {
           </button>
 
         </form>
-
 
         {/* Contact Information */}
         <div className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-2xl transition duration-300">
@@ -85,17 +140,13 @@ function Form() {
 
           <div className="space-y-5">
 
-            {/* Email */}
             <div className="flex items-center gap-4">
-
               <div className="bg-blue-100 p-3 rounded-lg">
                 <Mail className="text-blue-600" size={24} />
               </div>
 
               <div>
-                <p className="text-sm text-gray-500">
-                  Email
-                </p>
+                <p className="text-sm text-gray-500">Email</p>
 
                 <a
                   href="mailto:zulfiqaraliwd@gmail.com"
@@ -104,21 +155,15 @@ function Form() {
                   zulfiqaraliwd@gmail.com
                 </a>
               </div>
-
             </div>
 
-
-            {/* Phone */}
             <div className="flex items-center gap-4">
-
               <div className="bg-green-100 p-3 rounded-lg">
                 <Phone className="text-green-600" size={24} />
               </div>
 
               <div>
-                <p className="text-sm text-gray-500">
-                  Phone
-                </p>
+                <p className="text-sm text-gray-500">Phone</p>
 
                 <a
                   href="tel:+923435147766"
@@ -127,35 +172,26 @@ function Form() {
                   +92 3435147766
                 </a>
               </div>
-
             </div>
 
-
-            {/* Location */}
             <div className="flex items-center gap-4">
-
               <div className="bg-red-100 p-3 rounded-lg">
                 <MapPin className="text-red-600" size={24} />
               </div>
 
               <div>
-                <p className="text-sm text-gray-500">
-                  Location
-                </p>
+                <p className="text-sm text-gray-500">Location</p>
 
                 <p className="text-gray-800">
                   Pakistan
                 </p>
               </div>
-
             </div>
 
           </div>
-
         </div>
 
       </div>
-
     </div>
   );
 }
